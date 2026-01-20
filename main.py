@@ -11,14 +11,12 @@ print("Iniciando extração...")
 response = requests.get(URL)
 data = response.json()
 
-records = data[1:]  # remove cabeçalho
+records = data[1:]  
 
 clean_data = []
 
 for item in records:
     valor_raw = item.get("V")
-
-    # Trata valor
     if valor_raw is None:
         valor = None
     else:
